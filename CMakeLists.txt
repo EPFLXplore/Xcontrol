@@ -7,6 +7,8 @@ project(xcontrol)
 
 PID_Package(
     AUTHOR             Xplore
+    ADDRESS https://github.com/Xavier0301/xcontrol.git
+
     YEAR               2021
     LICENSE            CeCILL
     DESCRIPTION        TODO: input a short description of package xcontrol utility here
