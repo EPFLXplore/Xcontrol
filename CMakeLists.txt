@@ -11,7 +11,7 @@ PID_Package(
 
     YEAR               2021
     LICENSE            CeCILL
-    DESCRIPTION        TODO: input a short description of package xcontrol utility here
+    DESCRIPTION        xcontrol enabled motor control at Xplore
     VERSION            0.1.0
 )
 
@@ -32,5 +32,12 @@ PID_Package(
 #
 # Publish your documentation, and optionally binaries, online with:
 # PID_Publishing(...)
+
+PID_Dependency(ethercatcpp-core VERSION 1.1.1)
+PID_Dependency(ethercatcpp-epos VERSION 1.0.3)
+
+if(BUILD_EXAMPLES)
+  PID_Dependency(pid-os-utilities VERSION 2.0)
+endif()
 
 build_PID_Package()
