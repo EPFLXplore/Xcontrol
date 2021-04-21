@@ -5,46 +5,13 @@ xcontrol
 xcontrol enabled motor control at Xplore
 
 # Table of Contents
- - [Example](#example)
  - [Package Overview](#package-overview)
  - [Installation and Usage](#installation-and-usage)
  - [Offline API Documentation](#offline-api-documentation)
  - [License](#license)
  - [Authors](#authors)
 
-Example
-================
 
-An example is given in `xcontrol_example.cpp`. We will go through it here.
-
-We first declare the devices and their type here:
-```c++
-xcontrol::NavMotor epos_1(true), epos_2(false), epos_3(true);
-xcontrol::ArmMotor epos_4(true);
-```
-Each object takes as argument `bool has_motor`. 
-
-The second slave of the chain `epos_2` has no motor connected to the controller, hence its `has_motor` is set to `false`.
-
-The others do have a motor connected.
-
-Then, we pass pointers to `Epos4` objects to the `NetworkMaster`.  
-
-```c++
-vector<xcontrol::Epos4Extended*> chain = {&epos_1, &epos_2, &epos_3, &epos_4};
-xcontrol::NetworkMaster ethercat_master(chain, network_interface_name);
-```
-
-`init_network` does all the work of setting up the ethercat `Master` for us. 
-```c++
-  ethercat_master.init_network();
-```
-
-The last thing to do before being to use the motors is execute:
-```c++
-ethercat_master.switch_motors_to_enable_op();
-```
-which handles transitions of the FSM for us.
 
 
 Package Overview
@@ -54,7 +21,7 @@ The **xcontrol** package contains the following:
 
  * Libraries:
 
-   * xcontrol (static): Xcontrol is a component responsible for the control of motors at Xplore.
+   * xcontrol (shared): Xcontrol is a component responsible for the control of motors at Xplore.
 
  * Applications:
 
