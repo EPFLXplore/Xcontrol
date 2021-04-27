@@ -25,8 +25,8 @@
 #include <ethercatcpp/epos4.h>
 
 #include <network_master.h>
-#include <arm_motor.h>
-#include <nav_motor.h>
+#include <one_axis_slot.h>
+#include <three_axis_slot.h>
 
 using namespace std;
 using namespace std::chrono;
@@ -56,8 +56,8 @@ void* cyclic_Task(void* arg){
     stop = true;
   });
 
-  xcontrol::NavMotor epos_1(true), epos_2(false), epos_3(true);
-  xcontrol::ArmMotor epos_4(true);
+  xcontrol::ThreeAxisSlot epos_1(true), epos_2(false), epos_3(true);
+  xcontrol::OneAxisSlot epos_4(true);
 
   vector<xcontrol::Epos4Extended*> chain = {&epos_1, &epos_2, &epos_3, &epos_4};
 

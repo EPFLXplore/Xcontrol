@@ -19,15 +19,17 @@ void NetworkMaster::init_network() {
   	// Adding network interface
   	add_Interface_Primary(network_interface_name_);
 
-  	for(Epos4Extended epos: epos_chain_) 
+  	for(Epos4Extended epos: epos_chain_) {
 		robot.add_Device(epos);
+	}
 	
   	add_Bus(robot);
 }
 
 void NetworkMaster::switch_motors_to_enable_op() {
-  	for(Epos4Extended epos: epos_chain_) 
+  	for(Epos4Extended epos: epos_chain_) {
     	epos.switch_to_enable_op();
+	}
 }
 
 }
