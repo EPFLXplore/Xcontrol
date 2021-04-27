@@ -1,4 +1,4 @@
-#include <one_axis_slot.h>
+#include <xcontrol/one_axis_slot.h>
 
 using namespace ethercatcpp;
 

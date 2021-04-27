@@ -1,4 +1,4 @@
-#include <network_master.h>
+#include <xcontrol/network_master.h>
 
 #include <iostream>
 

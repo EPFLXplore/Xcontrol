@@ -1,4 +1,4 @@
-#include <epos4_extended.h>
+#include <xcontrol/epos4_extended.h>
 
 using namespace ethercatcpp;
 

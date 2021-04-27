@@ -24,9 +24,9 @@
 #include <ethercatcpp/master.h>
 #include <ethercatcpp/epos4.h>
 
-#include <network_master.h>
-#include <one_axis_slot.h>
-#include <three_axis_slot.h>
+#include <xcontrol/network_master.h>
+#include <xcontrol/one_axis_slot.h>
+#include <xcontrol/three_axis_slot.h>
 
 using namespace std;
 using namespace std::chrono;
